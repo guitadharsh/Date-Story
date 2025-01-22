@@ -39,18 +39,18 @@ body {
   backdrop-filter: blur(10px);
   color: white;
   position: relative;
+}
 
-  .storyfetcher__header h1 {
-    min-width: 100%;
-    min-height: 20%;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-  }
+.storyfetcher__header h1 {
+  min-width: 100%;
+  min-height: 20%;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
 
-  .stories_story {
-    font-size: 1.25rem; 
-    line-height: 1.5;
-  }
+.stories_story {
+  font-size: 1.25rem; 
+  line-height: 1.5;
 }
 
 .datepicker {
@@ -82,20 +82,33 @@ body {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .app {
+  body {
+    display: block;
+    height: auto;
+    padding: 20px;
+  }
+
+  .storyfetcher {
     max-width: 90vw;
     min-width: 90vw;
     min-height: 70vh;
     padding: 1rem;
+    margin: auto;
   }
 
-  .app__header h1 {
+  .storyfetcher__header h1 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
   }
 
+  .stories_story {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+
   .datepicker {
-    bottom: 10px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -106,23 +119,8 @@ body {
     padding: 8px;
     font-size: 14px;
   }
-
-  .stories_story {
-    font-size: 1.5rem; 
-  }
 }
 
-/* SkeletonLoader styles */
-/* SkeletonLoader styles */
-.skeleton-loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-
-/* SkeletonLoader styles */
 .skeleton-loader {
   display: flex;
   justify-content: center;
@@ -135,7 +133,7 @@ body {
 
 .skeleton-text {
   width: 100%;
-  height: 20px; /* Adjust height to match text height */
+  height: 20px;
   background-color: #e0e0e0;
   border-radius: 4px;
   position: relative;
@@ -153,7 +151,6 @@ body {
   animation: wave-animation 1.5s infinite linear;
 }
 
-/* Waving animation effect for the skeleton loader */
 @keyframes wave-animation {
   0% {
     left: -100%;
@@ -166,16 +163,21 @@ body {
   }
 }
 
-/* Multiple lines of skeleton */
 .skeleton-text.line {
   height: 20px;
   margin-bottom: 10px;
 }
 
-/* You can add more lines by using the line class */
 .skeleton-text.line.large {
-  height: 40px; /* For larger skeleton lines */
+  height: 40px;
 }
 
+@media (max-width: 768px) {
+  .skeleton-text {
+    height: 15px;
+  }
 
-
+  .skeleton-text.line.large {
+    height: 30px;
+  }
+}
