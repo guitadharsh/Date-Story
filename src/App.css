@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Patrick Hand", serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab, #b79891, #1f1c2c);
+  background-size: 300% 300%;
+  animation: gradientAnimation 8s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.storyfetcher {
+  max-width: 40vw;
+  min-width: 40vw;
+  min-height: 60vh;
+  padding: 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 4px 15px rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  color: white;
+  position: relative;
+
+  .storyfetcher__header h1 {
+    min-width: 100%;
+    min-height: 20%;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .stories_story {
+    font-size: 1.25rem; 
+    line-height: 1.5;
+  }
+}
+
+.datepicker {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  position: absolute;  
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+.datepicker-input {
+  padding: 10px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.datepicker-input:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .app {
+    max-width: 90vw;
+    min-width: 90vw;
+    min-height: 70vh;
+    padding: 1rem;
+  }
+
+  .app__header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .datepicker {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+
+  .datepicker-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .stories_story {
+    font-size: 1.5rem; 
+  }
+}
+
+/* SkeletonLoader styles */
+/* SkeletonLoader styles */
+.skeleton-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* SkeletonLoader styles */
+.skeleton-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton-text {
+  width: 100%;
+  height: 20px; /* Adjust height to match text height */
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.2) 100%);
+  animation: wave-animation 1.5s infinite linear;
+}
+
+/* Waving animation effect for the skeleton loader */
+@keyframes wave-animation {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+/* Multiple lines of skeleton */
+.skeleton-text.line {
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+/* You can add more lines by using the line class */
+.skeleton-text.line.large {
+  height: 40px; /* For larger skeleton lines */
+}
+
+
+
